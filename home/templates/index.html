@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}{% static 'css/style.css' %}{% endblock css %}
+
+{% block title %}Skill.py ( ) | Homepage{% endblock title %}
+
+{% block body_content %}
+<div class="about-us">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-7 d-flex flex-column justify-content-center">
+                <h3>
+                    What is <span class="skill">Skill.py ( )</span>
+                </h3>
+                <p class="desc">
+                    <span class="skill-transparent">Skill.py ( ) </span>is an online platform that delivers best
+                    quality content for learners that who are intrested in learning new skill and also they are
+                    curious about new tech.
+                    <br>
+                    There are so many platforms on internet but we provide best roadmap of learning and also
+                    content.
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img src="{% static 'img/main-img.jpg' %}" alt="404 | Error" class="main-img">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="featured">
+    <div class="container my-5">
+        <div class="row justify-content-between main_card-container">
+            <div class="col-md-5"><img src="{% static 'img/python logo.png' %}" alt="404 | Not found" class="card_img">
+                <h4 class="card_title">Nielit Courses</h4>
+                <p class="card_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ex deserunt,
+                    quae libero totam commodi natus autem consequatur inventore corporis fugit, voluptatibus
+                    asperiores, praesentium quibusdam nesciunt temporibus officia vitae maxime? Repellendus hic rem
+                    voluptatum earum.</p>
+                <a href="#" class="btn card_link">Explore More</a>
+            </div>
+            <div class="col-md-5"><img src="{% static 'img/web-developement.jpg' %}" alt="404 | Not found" class="card_img">
+                <h4 class="card_title">Our Courses</h4>
+                <p class="card_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ex deserunt,
+                    quae libero totam commodi natus autem consequatur inventore corporis fugit, voluptatibus
+                    asperiores, praesentium quibusdam nesciunt temporibus officia vitae maxime? Repellendus hic rem
+                    voluptatum earum.</p>
+                <a href="#" class="btn card_link">Explore More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="partners">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-md-5 d-flex flex-column align-items-center">
+                <img src="https://images.pexels.com/photos/1136575/pexels-photo-1136575.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="404 | Error" class="user-logo">
+                <h4 class="name">Ethen Winters</h4>
+                <p class="user-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque quisquam
+                    non earum impedit recusandae ipsum eius dignissimos quaerat officia, magnam eum nemo nobis ut
+                    corrupti repellat, tempora laboriosam iure porro.</p>
+            </div>
+            <div class="col-md-5 d-flex flex-column align-items-center">
+                <img src="https://images.pexels.com/photos/1136575/pexels-photo-1136575.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="404 | Error" class="user-logo">
+                <h4 class="name">Ethen Winters</h4>
+                <p class="user-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque quisquam
+                    non earum impedit recusandae ipsum eius dignissimos quaerat officia, magnam eum nemo nobis ut
+                    corrupti repellat, tempora laboriosam iure porro.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container p-5 mb-5 footer-container">
+        <h3 class="contact-us">Contact Us</h3>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="footer-card-1">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque corrupti ab eos magni,
+                        fugiat vero
+                        veritatis exercitationem maxime quae velit doloribus alias nostrum molestiae impedit
+                        deserunt dolor!
+                        Aspernatur eum perspiciatis nobis. Sunt sint sed repudiandae.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-card-2">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore harum possimus accusantium
+                        aspernatur assumenda? Quasi, nam? Autem corrupti modi accusamus fuga? Repellat veritatis
+                        eius earum
+                        fugiat rerum sapiente ipsa aspernatur, exercitationem modi? Cumque, eaque magnam.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-card-3">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad veniam porro ipsam nostrum
+                        repellat a
+                        dignissimos amet nemo veritatis. Iusto aliquid fugiat obcaecati labore quia laudantium error
+                        necessitatibus ducimus voluptates, non perspiciatis, voluptate accusamus aspernatur.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock body_content %}

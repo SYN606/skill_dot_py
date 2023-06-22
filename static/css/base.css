@@ -1,0 +1,67 @@
+:root {
+    --text: #0d0c0d;
+    --background: #e6e5e6;
+    --primary-button: #645e5f;
+    --secondary-button: #d7d6d5;
+    --accent: #2f2d2d;
+    /* image box shadow */
+    --img-box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+@font-face {
+    font-family: 'Auvelle';
+    src: url('fonts/Auvelle\ Regular.woff2') format('.woff2');
+}
+
+@font-face {
+    font-family: 'Chuterolk';
+    src: url('fonts/Chuterolk.woff2') format('.woff2');
+}
+
+img {
+    width: 100%;
+}
+
+body,
+.navbar {
+    box-sizing: border-box;
+    color: var(--text) !important;
+    background-color: var(--background) !important;
+}
+
+.navbar {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    padding: 0;
+    z-index: 10;
+
+}
+
+.navbar-brand span {
+    background-color: transparent;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+    margin: auto;
+}
+
+.skill {
+    background-color: var(--accent);
+    padding: 0.125em;
+    border-radius: 0.12em;
+    font-family: 'Chuterolk';
+}
+
+.skill-transparent {
+    font-family: 'Chuterolk';
+    font-size: larger;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .navbar-collapse {
+        flex-grow: 1;
+        margin: inherit;
+    }
+}
