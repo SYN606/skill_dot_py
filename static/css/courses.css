@@ -1,0 +1,33 @@
+.featured {
+    margin-top: 15em;
+}
+
+.row {
+
+    justify-content: space-between !important;
+}
+
+.courses {
+    margin-block: 10em;
+}
+
+.card_img {
+    border-radius: 1em;
+    border: 1px solid black;
+}
+
+.card_title {
+    margin-top: 1.5em;
+}
+
+.card_link {
+    border: 1px solid black;
+    background-color: var(--primary-button);
+    color: white;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .row {
+        gap: 1.5em !important;
+    }
+}

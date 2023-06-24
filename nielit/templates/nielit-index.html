@@ -1,1 +1,42 @@
 {% extends 'base.html' %}
+
+{% load static %}
+{% block css %}{% static 'css/courses.css' %}{% endblock css %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block body_content %}
+<div class="courses">
+    <div class="container">
+        <h3 class="mt-5"> Nielit Courses</h3>
+        <div class="row mt-5">
+            <div class="col-md-5"><img
+                    src="https://images.pexels.com/photos/930530/pexels-photo-930530.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="404 | not found" class="card_img">
+                <h3 class="card_title">O Level</h3>
+                <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, dolore
+                    doloremque
+                    quae
+                    laboriosam, sunt dolores saepe recusandae voluptatem, quam amet totam eligendi error officiis
+                    modi
+                    exercitationem accusamus illum impedit atque? Provident accusantium omnis voluptate cupiditate!
+                </p>
+                <a href="{% url 'o_level' %}" class="btn card_link">Enroll Now</a>
+            </div>
+            <div class="col-md-5"><img
+                    src="https://images.pexels.com/photos/930530/pexels-photo-930530.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt="404 | not found" class="card_img">
+                <h3 class="card_title">CCC</h3>
+                <p class="card_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, dolore
+                    doloremque
+                    quae
+                    laboriosam, sunt dolores saepe recusandae voluptatem, quam amet totam eligendi error officiis
+                    modi
+                    exercitationem accusamus illum impedit atque? Provident accusantium omnis voluptate cupiditate!
+                </p>
+                <a href="#" class="btn card_link">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body_content %}
