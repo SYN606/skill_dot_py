@@ -1,18 +1,19 @@
 from django.shortcuts import render
-from .models import O_level
+from .models import c_intro
 
 
 
 def nielit_homepage(request):
-    c_intro = O_level.objects.all()
     data = {
         'title' : 'Nielit Courses',
-        'key' : 'Anubhav Vikram Singh',
-    }
+        
+            }
     return render(request, 'nielit-index.html', data)
 
-def o_level(request):
+def c_details(request,course_id):
+    c_detail = c_intro.objects.filter(id=course_id)
+    print(c_detail)
     data = {
-        'title' : 'O Level'
+        'c_intro' : c_detail
     }
-    return render(request, 'o-level.html', data)
+    return render(request, 'c-detail.html', data)

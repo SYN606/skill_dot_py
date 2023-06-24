@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if c_intro %}
+        {% for c in c_intro %}
+            {{ c.c_name }}
+        {% endfor %}
+    {% endif %}
+{% endblock title %}
+
+
+{% block body_content %}
+    
+<div class="container mt-5">
+    {% if c_intro %}
+        {% for c in c_intro %}
+            <h4>{{ c.c_name }}</h4>
+            <p class="c_desc">{{ c.c_detail }}</p>
+        {% endfor %}
+    {% else %}
+        <h5> No Data </h5>
+    {% endif %}
+        
+</div>
+    
+{% endblock body_content %}

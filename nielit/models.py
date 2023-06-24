@@ -1,9 +1,9 @@
 from django.db import models
 
 # Create your models here.
-class O_level(models.Model):
-    ques = models.CharField(max_length=50)
-    ans = models.CharField(max_length=1000)
+class c_intro(models.Model):
+    c_name = models.CharField(max_length=50)
+    c_detail = models.CharField(max_length=1000)
 
     def __str__(self):
-        return self.ques
+        return self.c_name
