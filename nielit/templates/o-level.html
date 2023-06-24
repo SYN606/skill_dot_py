@@ -3,13 +3,16 @@
 {% block title %}{{ title }}{% endblock title %}
 
 {% block body_content %}
-
-<div class="container">
-    <h4 class="mt-5">
-        What is O Level
-    </h4>
-    <p>
-    </p>
+    
+<div class="container mt-5">
+    {% if title %}
+         <h4>
+            {{ key }}
+        </h4>
+    {% else %}
+        <h5> {{ key }} </h5>
+    {% endif %}
+        
 </div>
-
+    
 {% endblock body_content %}

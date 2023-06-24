@@ -1,9 +1,13 @@
 from django.shortcuts import render
+from .models import O_level
 
-# Create your views here.
+
+
 def nielit_homepage(request):
+    c_intro = O_level.objects.all()
     data = {
-        'title' : 'Nielit Courses'
+        'title' : 'Nielit Courses',
+        'key' : 'Anubhav Vikram Singh',
     }
     return render(request, 'nielit-index.html', data)
 
