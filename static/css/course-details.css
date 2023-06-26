@@ -1,0 +1,17 @@
+.main-container {
+    margin-top: 10em;
+}
+
+.table {
+    box-shadow: var(--img-box-shadow);
+}
+
+.highlight {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+
+.btn {
+    text-decoration: underline;
+    color: rgb(70, 70, 245);
+}

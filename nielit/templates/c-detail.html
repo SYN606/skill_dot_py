@@ -1,26 +1,95 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {% if c_intro %}
-        {% for c in c_intro %}
-            {{ c.c_name }}
-        {% endfor %}
-    {% endif %}
+{% if c_intro %}
+{% for c in c_intro %}
+{{ c.c_name }}
+{% endfor %}
+{% endif %}
 {% endblock title %}
 
+{% load static %}
+{% block css %}{% static 'css/course-details.css' %}{% endblock css %}
 
 {% block body_content %}
-    
+
 <div class="container mt-5">
     {% if c_intro %}
-        {% for c in c_intro %}
-            <h4>{{ c.c_name }}</h4>
-            <p class="c_desc">{{ c.c_detail }}</p>
-        {% endfor %}
+    {% for c in c_intro %}
+    <div class="main-container">
+        <div class="container mt-5">
+            <h4>What is <span class="highlight"><i class="fa-solid fa-quote-left fa-2xs"></i> {{c.c_name}} <i
+                        class="fa-solid fa-quote-right fa-2xs"></i></span></h4>
+            <p class="desc">{{c.c_detail}}</p>
+        </div>
+    </div>
+    {% endfor %}
     {% else %}
-        <h5> No Data </h5>
+    <h5> No Data </h5>
     {% endif %}
-        
+    <div class="syllabus">
+        <h4>Syllabus</h4>
+        <table class="table table-responsive table-secondary">
+            <thead>
+                <tr>
+                    <th scope="col">Sr. No.</th>
+                    <th scope="col">Module Code</th>
+                    <th scope="col">Subject Name</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% if papers %}
+                    {% for p in papers %}
+                        <tr>
+                            <th scope="row">{{ p.id }}</th>
+                            <td>{{ p.module_code }}</td>
+                            <td><a href="#itn" class="btn">{{ p.module_name }}</a></td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    <div class="unit-details">
+        <div class="container mt-5">
+            <hr>
+            {% if papers %}
+            {% for p in papers %}
+            <h4 id="itn" class="mt-5"><i class="fa-solid fa-check"></i> {{ p.module_name }}
+            </h4>
+            <p class="desc">
+                {{ p.module_detail }}
+            </p>
+            
+            <h5 class="chapters"><i class="fa-solid fa-check"></i> Units in this Module</h5>
+            <table class="table table-responsive table-secondary">
+                <thead>
+                    <tr>
+                        <th scope="col">Sr. No.</th>
+                        <th scope="col">Chapter Name</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if syllabus %}
+                        {% for s in syllabus %}
+                            <tr>
+                                <th scope="row">{{ s.id }}</th>
+                                <td> {{ s.chapter_name }} </td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+            <p class="extra-desc my-5">
+                {{ p.extra_md }}
+            </p>
+            <hr>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
 </div>
-    
+
 {% endblock body_content %}
