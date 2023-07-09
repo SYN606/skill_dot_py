@@ -35,6 +35,7 @@
                     <th scope="col">Sr. No.</th>
                     <th scope="col">Module Code</th>
                     <th scope="col">Subject Name</th>
+                    <th scope="col">Pricing</th>
 
                 </tr>
             </thead>
@@ -44,7 +45,8 @@
                         <tr>
                             <th scope="row">{{ p.id }}</th>
                             <td>{{ p.module_code }}</td>
-                            <td><a href="#itn" class="btn">{{ p.module_name }}</a></td>
+                            <td><a href="#{{ p.module_code }}" class="btn">{{ p.module_name }}</a></td>
+                            <td><a href="" class="btn">Buy this @99 </a></td>
                         </tr>
                     {% endfor %}
                 {% endif %}
@@ -56,35 +58,11 @@
             <hr>
             {% if papers %}
             {% for p in papers %}
-            <h4 id="itn" class="mt-5"><i class="fa-solid fa-check"></i> {{ p.module_name }}
-            </h4>
-            <p class="desc">
-                {{ p.module_detail }}
-            </p>
-            
-            <h5 class="chapters"><i class="fa-solid fa-check"></i> Units in this Module</h5>
-            <table class="table table-responsive table-secondary">
-                <thead>
-                    <tr>
-                        <th scope="col">Sr. No.</th>
-                        <th scope="col">Chapter Name</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    {% if syllabus %}
-                        {% for s in syllabus %}
-                            <tr>
-                                <th scope="row">{{ s.id }}</th>
-                                <td> {{ s.chapter_name }} </td>
-                            </tr>
-                        {% endfor %}
-                    {% endif %}
-                </tbody>
-            </table>
-            <p class="extra-desc my-5">
-                {{ p.extra_md }}
-            </p>
+                <h4 id="{{ p.module_code }}" class="mt-5"><i class="fa-solid fa-check"></i> {{ p.module_name }}
+                </h4>
+                <p class="desc">
+                    {{ p.module_detail }}
+                </p>
             <hr>
             {% endfor %}
             {% endif %}

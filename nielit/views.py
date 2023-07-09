@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import c_intro
 from .models import Module
-from .models import Syllabus
+
 
 def nielit_homepage(request):
     data = {
@@ -21,13 +21,9 @@ def c_details(request,course_name):
     
     papers = Module.objects.filter(course_name_id=cn_id)
     
-
-    syllabus = Syllabus.objects.filter()
-
     
     data = {
         'c_intro' : c_detail,
         'papers' : papers,
-        'syllabus' : syllabus
     }
     return render(request, 'c-detail.html', data)
