@@ -1,0 +1,17 @@
+.img {
+    object-fit: cover;
+    border-radius: 1em;
+    box-shadow: var(--img-box-shadow);
+}
+.border {
+    border-radius: 1em !important;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .img{
+        display: none;
+    }
+    .border{
+        border: none !important;
+    }
+}

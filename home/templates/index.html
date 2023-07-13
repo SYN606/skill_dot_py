@@ -6,6 +6,18 @@
 {% block title %}{{ title }}{% endblock title %}
 
 {% block body_content %}
+
+{% if messages %}
+{% for m in messages %}
+<div class="container">
+    <div class="alert alert-dismissible fade show border border-{{m.tags}}-subtle bg-{{m.tags}}-subtle" role="alert">
+        <p class="m-0 px-3">{{ m }}</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+
 <div class="about-us">
     <div class="container mt-5">
         <div class="row">
@@ -39,7 +51,8 @@
                     voluptatum earum.</p>
                 <a href="{% url 'nielit_homepage' %}" class="btn card_link">Explore More</a>
             </div>
-            <div class="col-md-5"><img src="{% static 'img/web-developement.jpg' %}" alt="404 | Not found" class="card_img">
+            <div class="col-md-5"><img src="{% static 'img/web-developement.jpg' %}" alt="404 | Not found"
+                    class="card_img">
                 <h4 class="card_title">Our Courses</h4>
                 <p class="card_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ex deserunt,
                     quae libero totam commodi natus autem consequatur inventore corporis fugit, voluptatibus
@@ -50,6 +63,27 @@
         </div>
     </div>
 </div>
+{% if partner %}
+<div class="partners">
+    <div class="container">
+        <div class="row justify-content-between">
+            {% for p in partner %}
+            <div class="col-md-5 d-flex flex-column align-items-center">
+                <img src="/media/{{ p.partner_logo }}" alt="404 | Error" class="user-logo">
+                {% if p.partner_social_media_link %}
+                <a href="{{ p.partner_social_media_link }}" target="_blank">
+                    <h4 class="name">{{ p.partner_name }}</h4>
+                </a>
+                {% else %}
+                <h4 class="name">{{ p.partner_name }}</h4>
+                {% endif %}
+                <p class="user-desc">{{ p.partner_details }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% else %}
 <div class="partners">
     <div class="container">
         <div class="row justify-content-between">
@@ -72,8 +106,9 @@
         </div>
     </div>
 </div>
+{% endif %}
 <footer class="footer">
-    <div class="container p-5 mb-5 footer-container">
+    <div class="container p-5 my-5 footer-container">
         <h3 class="contact-us">Contact Us</h3>
         <div class="row mt-5">
             <div class="col-md-4">

@@ -9,11 +9,6 @@
 }
 
 @font-face {
-    font-family: 'Auvelle';
-    src: url('fonts/Auvelle\ Regular.woff2') format('.woff2');
-}
-
-@font-face {
     font-family: 'Chuterolk';
     src: url('fonts/Chuterolk.woff2') format('.woff2');
 }
@@ -29,22 +24,9 @@ body,
     background-color: var(--background) !important;
 }
 
-.navbar {
-    position: fixed;
-    top: 0%;
-    width: 100%;
-    padding: 0;
-    z-index: 10;
-
-}
 
 .navbar-brand span {
     background-color: transparent;
-}
-
-.navbar-collapse {
-    flex-grow: 0;
-    margin: auto;
 }
 
 .skill {
@@ -60,8 +42,7 @@ body,
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .navbar-collapse {
-        flex-grow: 1;
-        margin: inherit;
+    .navbar-nav {
+        align-items: start;
     }
 }

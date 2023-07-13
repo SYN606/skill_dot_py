@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}{% static 'css/account.css' %}{% endblock css %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block body_content %}
+<div class="container border mt-5">
+    {% if messages %}
+        {% for m in messages %}
+        <div class="alert alert-dismissible fade show border border-{{m.tags}}-subtle bg-{{m.tags}}-subtle" role="alert">
+            <p class="m-0">{{ m }} </p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+    {% endif %}
+    <div class="row justify-content-around">
+        <div class="col-md-5">
+            <div class="img-container">
+                <img src="{% static 'img/login-img.jpg' %}" alt="" class="img">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="area-container">
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input type="test" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">
+                        <label for="floatingInput">Username</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <hr>
+                <p>Dont have an account ? <a href="{% url 'create_acc' %}">Create account</a> or <a href="#">Forgotten Password</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body_content %}
