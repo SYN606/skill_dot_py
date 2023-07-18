@@ -45,8 +45,8 @@
                         <tr>
                             <th scope="row">{{ p.id }}</th>
                             <td>{{ p.module_code }}</td>
-                            <td><a href="#{{ p.module_code }}" class="btn">{{ p.module_name }}</a></td>
-                            <td><a href="" class="btn">Buy this @99 </a></td>
+                            <td>{{ p.module_name }}</td>
+                            <td><a href="{% url 'buy_course' p.module_code %}" class="link-primary link-offset-2">Buy this @99</a></td>
                         </tr>
                     {% endfor %}
                 {% endif %}

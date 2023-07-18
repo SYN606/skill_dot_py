@@ -1,0 +1,9 @@
+.card {
+    width: 100%;
+    box-shadow: var(--img-box-shadow);
+}
+
+.card-logo {
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}

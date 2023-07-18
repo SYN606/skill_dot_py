@@ -1,8 +1,14 @@
+
+# imports
+
 from django.shortcuts import render, redirect
 from .models import Partner
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.decorators import login_required
+
+from .decorators import *
 
 def home(request):
     
@@ -15,7 +21,7 @@ def home(request):
     }
     return render(request, 'index.html', data)
 
-
+@check_authenticated_user
 def login(request):
     data = {
         'title' : 'Login'
@@ -41,7 +47,8 @@ def logout(request):
     auth_logout(request)
     messages.warning(request, 'Logged out successfully')
     return redirect('/')
-    
+
+@check_authenticated_user
 def create_account(request):
     
     data = {
@@ -79,7 +86,26 @@ def create_account(request):
 
             else:
                 messages.warning(request, "Password didn't match")
-                
                 return render(request, 'create_user.html', data)
     else:
         return render(request, 'create_user.html', data)
+    
+def pricing(request):
+    data = {
+        'title' : 'Pricing'
+    }
+    return render(request, 'pricing.html', data)
+
+@login_required(login_url='login')
+def buy(request, module_code):
+    data ={
+        'title' : f'Buy {module_code} Module'
+    }
+    return render(request, 'buy-course.html', data)
+
+@login_required(login_url='login')
+def downlaod_file(request):
+    data = {
+        'title' : 'Download file'
+    }
+    return render(request, 'download-page.html', data)

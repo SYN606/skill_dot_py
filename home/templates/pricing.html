@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}{% static 'css/pricing.css' %}{% endblock css %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block body_content %}
+
+<div class="container_pricing mt-5">
+    <div class="container">
+        <div class="row gap-3 justify-content-center">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{% static 'img/o-level.jpg' %}" class="card-img-top card-logo" alt="404 | Error Image not found">
+                    <div class="card-body">
+                        <h5 class="card-title">O Level</h5>
+                        <p class="card-text">Buy our O Level Nielit Courses in affordable price.</p>
+                        <a href="{% url 'course-detail' "O Level" %}" class="btn btn-outline-primary">Check Out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{% static 'img/ccc.jpg' %}" class="card-img-top card-logo" alt="404 | Error Image not found">
+                    <div class="card-body">
+                        <h5 class="card-title">CCC</h5>
+                        <p class="card-text">Want to Crack CCC exam, enroll in our CCC course in affordable price</p>
+                        <a href="{% url 'course-detail' "CCC" %}" class="btn btn-outline-primary">Check Out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{% static 'img/main-logo.png' %}" class="card-img-top card-logo" alt="404 | Error Image not found">
+                    <div class="card-body">
+                        <h5 class="card-title">Donate Us</h5>
+                        <p class="card-text">Want to Support us ? Donate us that it can help us to grow.</p>
+                        <a href="#" class="btn btn-outline-success">Donate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body_content %}

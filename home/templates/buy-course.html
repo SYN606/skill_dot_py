@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}{% static 'css/pricing.css' %}{% endblock css %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block body_content %}
+
+<a href="{% url 'download' %}"> payments page </a>
+    
+
+{% endblock body_content %}
